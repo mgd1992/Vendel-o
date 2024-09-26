@@ -3,6 +3,7 @@ require "test_helper"
 class Authentication::UsersControllerTest < ActionDispatch::IntegrationTest
 
   setup do
+    Product.delete_all
     User.delete_all
     User.create(email: 'juan@vendelo.com', username: 'juan09', password: 'testme')
   end

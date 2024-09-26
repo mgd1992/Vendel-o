@@ -73,10 +73,10 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     post products_path, params: {
 
       product: {
-         title: 'Macbook Air',
-         description: 'Le falla la bateria',
-         price: 250,
-         category_id: categories(:computers).id
+         title: 'Nintendo 64',
+         description: 'Le faltan los cables',
+         price: 45,
+         category_id: categories(:videogames).id
       }
 
     }
@@ -87,13 +87,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test 'does not allow to create a new product with empty fields' do
     post products_path, params: {
-
       product: {
-         title: '',
-         description: 'Pantalla rota, solo repuestos',
-         price: 45
+        title: '',
+        description: 'Le faltan los cables',
+        price: 45
       }
-
     }
 
      assert_response :unprocessable_entity
@@ -108,11 +106,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test 'allow to update a product' do
     patch product_path(products(:ps4)), params: {
-
       product: {
          price: 165
       }
-
     }
 
      assert_redirected_to products_path
@@ -121,11 +117,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
   test 'does not allow to update a product with an invalid field' do
     patch product_path(products(:ps4)), params: {
-
       product: {
          price: nil
       }
     }
+    
      assert_response :unprocessable_entity
   end
 
