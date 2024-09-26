@@ -1,23 +1,38 @@
-# README
+Vendelo ** Still in development
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Vendelo is a platform for buying and selling second-hand items that users no longer need in their homes. Whether you're looking to declutter or find great deals on used items, Vendelo provides a simple and user-friendly interface to connect buyers and sellers.
 
-Things you may want to cover:
+A rails web app built to buy and sell things
 
-* Ruby version
+Install
+Clone the repository
+gh repo clone mgd1992/vendelo
+cd vendelo
+Check your Ruby version
+ruby -v
+The ouput should start with something like ruby 2.6.5
 
-* System dependencies
+If not, install the right ruby version using rbenv (it could take a while):
 
-* Configuration
+rbenv install 2.6.5
+Install dependencies
+Using Bundler:
 
-* Database creation
+bundle
 
-* Database initialization
+bundle install
+Add secret keys
+Using Cloudinary:
 
-* How to run the test suite
+touch .env
+echo '.env*' >> .gitignore
 
-* Services (job queues, cache servers, search engines, etc.)
+Sign up to cloudinary and add your own secret key to file:
+CLOUDINARY_URL=cloudinary://.....
+Initialize the database
+rails db:create db:migrate db:seed
+Launch server
+rails s
 
 * Deployment instructions
 
