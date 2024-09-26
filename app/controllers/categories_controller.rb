@@ -1,8 +1,9 @@
 class CategoriesController < ApplicationController
-  
+  before_action :authorize!
   before_action :set_category, only: %i[ edit update destroy ]
 
   def index
+    authorize!
     @categories = Category.all.order(name: :asc)
   end
 
