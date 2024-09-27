@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
   include PgSearch::Model
+  include Favoritable
+  
   pg_search_scope :search_full_text, against: {
     title: 'A',
     description: 'B'
@@ -19,11 +21,11 @@ class Product < ApplicationRecord
   #validates :category_id, presence: true
   #validates :user_id, presence: true
 
-  has_many :favorites, dependent: :destroy
   belongs_to :category
   belongs_to :user, default: -> { Current.user }
 
   def owner?
     user_id == Current.user&.id
   end
+
 end

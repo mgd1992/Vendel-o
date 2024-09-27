@@ -1,8 +1,8 @@
 
-favorite_one:
+paco_switch:
   user: paco
   product: switch
 
-favorite_two:
-  user: paco
+maria_driver:
+  user: maria
   product: driver2
