@@ -1,4 +1,6 @@
 class FavoritesController < ApplicationController
+  def index
+  end
   def create
     product.favorite!
     #Favorite.create(product: product, user: Current.user)
