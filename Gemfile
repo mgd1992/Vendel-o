@@ -46,6 +46,9 @@ gem "pg_search", "~> 2.3"
 
 gem "webdrivers"
 
+# View components
+gem "view_component", "~> 2.74"
+
 # Paginacion
 gem "pagy", "~> 9.0"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
