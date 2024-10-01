@@ -6,9 +6,10 @@ A rails web app built to buy and sell things
 
 Install
 Clone the repository
-gh repo clone mgd1992/vendelo
+bash gh repo clone mgd1992/vendelo
 cd vendelo
 Check your Ruby version
+
 ruby -v
 The ouput should start with something like ruby 2.6.5
 
