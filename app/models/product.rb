@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   include PgSearch::Model
   include Favoritable
-  
+
   pg_search_scope :search_full_text, against: {
     title: 'A',
     description: 'B'
@@ -28,4 +28,7 @@ class Product < ApplicationRecord
     user_id == Current.user&.id
   end
 
+  def broadcast
+    broadcast_replace_to self, partial: 'products/product_details', locals: { product: self }
+  end
 end
