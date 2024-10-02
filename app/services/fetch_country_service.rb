@@ -13,7 +13,7 @@ class FetchCountryService
     status = parsed_response.dig("status")
 
     if status == "success"
-     parsed_response.dig("countryCode").downcase
+      parsed_response.dig("countryCode").downcase
     else
       nil
     end

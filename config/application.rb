@@ -24,13 +24,17 @@ module Vendelo
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # allow multiaquery
-    config.active_record.async_query_executor = :global_thread_pool
 
     # available languages
     config.i18n.available_locales = [:en, :es]
 
     # lenguage by default
     config.i18n.default_locale = :en
+
+    # allow multiaquery
+    config.active_record.async_query_executor = :global_thread_pool
+
+    # Background job
+    config.active_job.queue_adapter = :sidekiq
   end
 end
